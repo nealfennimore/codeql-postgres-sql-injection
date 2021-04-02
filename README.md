@@ -1,4 +1,4 @@
-# NYU ISP
+# CodeQL Postgres SQL Injection
 
 ## Setup
 
