@@ -1,0 +1,27 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build DB Container",
+            "type": "shell",
+            "command": ". scripts/build.sh"
+        },
+        {
+            "label": "Run DB Container",
+            "type": "shell",
+            "command": ". scripts/run.sh"
+        },
+        {
+            "label": "CodeQL Create DB",
+            "type": "shell",
+            "command": ". scripts/codeql-create-db.sh"
+        },
+        {
+            "label": "CodeQL Analyze Source",
+            "type": "shell",
+            "command": ". scripts/codeql-analyze.sh"
+        },
+    ]
+}
