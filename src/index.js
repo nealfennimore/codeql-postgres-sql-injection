@@ -1,5 +1,7 @@
 const { Client } = require('pg');
 
+const cliQuery = process.argv[2];
+
 const client = new Client({
     database: 'postgres',
     user: 'postgres',
@@ -8,16 +10,46 @@ const client = new Client({
 
 client.connect();
 
-const [ _, __, query] = process.argv;
+//
+// ────────────────────────────────────────────── I ──────────
+//   :::::: O N E : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────
+//
+client.query(cliQuery);
 
-async function run(query){
-    const { rows } = await client.query(query);
-    console.log(rows);
-};
+//
+// ────────────────────────────────────────────── II ──────────
+//   :::::: T W O : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────
+//
+(function iife(){
+    client.query(cliQuery);
+})()
 
-run(query)
-    .catch(console.error)
-    .finally(()=>{
-        client.end();
-        process.exit();
-    });
+//
+// ────────────────────────────────────────────────── III ──────────
+//   :::::: T H R E E : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────────
+//
+function passedRef(passedCliQuery) {
+    client.query(passedCliQuery)
+}
+
+passedRef(cliQuery);
+
+//
+// ──────────────────────────────────────────────── IV ──────────
+//   :::::: F O U R : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────
+//
+class PG {
+    constructor(pgClient){
+        this.client = pgClient;
+    }
+
+    query(q){
+        this.client.query(q);
+    }
+}
+
+new PG(client).query(cliQuery);
