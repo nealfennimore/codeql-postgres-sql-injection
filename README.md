@@ -14,3 +14,9 @@ Setup the database container
 . scripts/build.sh
 . scripts/run.sh
 ```
+
+## Analyze
+```sh
+. scripts/codeql-create-db.sh
+. scripts/codeql-analyze.sh
+```
