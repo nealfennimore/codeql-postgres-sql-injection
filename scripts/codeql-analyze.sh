@@ -14,3 +14,5 @@ docker run --rm -it -u $(id -u) \
         --format=sarif-latest \
         --output=/tmp/output/results.sarif \
         /tmp/db /tmp/queries
+
+code codeql/output/results.sarif
