@@ -14,6 +14,11 @@
             "command": ". scripts/run.sh"
         },
         {
+            "label": "CodeQL Clear DB",
+            "type": "shell",
+            "command": ". scripts/clear.sh"
+        },
+        {
             "label": "CodeQL Create DB",
             "type": "shell",
             "command": ". scripts/codeql-create-db.sh"
@@ -23,5 +28,27 @@
             "type": "shell",
             "command": ". scripts/codeql-analyze.sh"
         },
+        {
+            "label": "CodeQL View Results",
+            "type": "shell",
+            "command": "code codeql/output/results.sarif"
+        },
+        {
+            "label": "Sync CodeQL DB to Source",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "CodeQL Clear DB",
+                "CodeQL Create DB"
+            ]
+        },
+        {
+            "label": "Refresh CodeQL",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Sync CodeQL DB to Source",
+                "CodeQL Analyze Source",
+                "CodeQL View Results"
+            ]
+        }
     ]
 }
