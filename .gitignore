@@ -1,5 +1,4 @@
 node_modules
 .cache
 codeql/db/*
-codeql/output/*
 !.gitkeep

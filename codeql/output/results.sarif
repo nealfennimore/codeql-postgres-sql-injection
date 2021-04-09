@@ -1,0 +1,917 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "CodeQL",
+        "organization" : "GitHub",
+        "semanticVersion" : "2.4.6",
+        "rules" : [ {
+          "id" : "global-sql-process-injection",
+          "name" : "global-sql-process-injection",
+          "shortDescription" : { },
+          "fullDescription" : { },
+          "defaultConfiguration" : { },
+          "properties" : {
+            "kind" : "path-problem",
+            "id" : "global-sql-process-injection"
+          }
+        }, {
+          "id" : "local-sql-process-injection",
+          "name" : "local-sql-process-injection",
+          "shortDescription" : { },
+          "fullDescription" : { },
+          "defaultConfiguration" : { },
+          "properties" : {
+            "kind" : "problem",
+            "id" : "local-sql-process-injection"
+          }
+        } ]
+      },
+      "extensions" : [ {
+        "name" : "codeql-java-upgrades"
+      }, {
+        "name" : "codeql-javascript-tests",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-libraries-csharp",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-libraries-python",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-libraries-javascript",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-python-examples",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-libraries-java",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-upgrades",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-javascript",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-cpp-tests",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-java-examples",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-cpp",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-csharp-examples",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-java-tests",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-java",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-python-tests",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-cpp-upgrades"
+      }, {
+        "name" : "codeql-csharp-upgrades"
+      }, {
+        "name" : "codeql-csharp",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-python",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "legacy-libraries-cpp",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-csharp-tests",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-suite-helpers",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-python-upgrades"
+      }, {
+        "name" : "codeql-javascript-upgrades"
+      }, {
+        "name" : "codeql-javascript-examples",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "codeql-cpp-examples",
+        "semanticVersion" : "0.0.0"
+      }, {
+        "name" : "injection",
+        "semanticVersion" : "0.0.0"
+      } ]
+    },
+    "artifacts" : [ {
+      "location" : {
+        "uri" : "index.js",
+        "uriBaseId" : "%SRCROOT%",
+        "index" : 0
+      }
+    } ],
+    "results" : [ {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 18,
+            "startColumn" : 14,
+            "endColumn" : 22
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "828aec6c0acceb27:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 18,
+                  "startColumn" : 14,
+                  "endColumn" : 22
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 26,
+            "startColumn" : 18,
+            "endColumn" : 26
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "133d1518f6972e48:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 26,
+                  "startColumn" : 18,
+                  "endColumn" : 26
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 35,
+            "startColumn" : 18,
+            "endColumn" : 32
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "de11534a7b7bff0e:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 38,
+                  "startColumn" : 11,
+                  "endColumn" : 19
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 34,
+                  "startColumn" : 20,
+                  "endColumn" : 34
+                }
+              },
+              "message" : {
+                "text" : "passedCliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 35,
+                  "startColumn" : 18,
+                  "endColumn" : 32
+                }
+              },
+              "message" : {
+                "text" : "passedCliQuery"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 66,
+            "startColumn" : 22,
+            "endColumn" : 23
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7b35212e6fc05931:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 70,
+                  "startColumn" : 16,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 65,
+                  "startColumn" : 18,
+                  "endColumn" : 19
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 66,
+                  "startColumn" : 22,
+                  "endColumn" : 23
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 80,
+            "startColumn" : 29,
+            "endColumn" : 30
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "124c2eb097b411b1:1",
+        "primaryLocationStartColumnFingerprint" : "20"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 85,
+                  "startColumn" : 9,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 78,
+                  "startColumn" : 18,
+                  "endColumn" : 19
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 80,
+                  "startColumn" : 29,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          } ]
+        } ]
+      }, {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 85,
+                  "startColumn" : 9,
+                  "endColumn" : 17
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 78,
+                  "startColumn" : 18,
+                  "endColumn" : 19
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 82,
+                  "startColumn" : 13,
+                  "endColumn" : 14
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 78,
+                  "startColumn" : 18,
+                  "endColumn" : 19
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 80,
+                  "startColumn" : 29,
+                  "endColumn" : 30
+                }
+              },
+              "message" : {
+                "text" : "q"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "local-sql-process-injection",
+      "ruleIndex" : 1,
+      "message" : {
+        "text" : "Found local CLI input passed into SQL query"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 18,
+            "endColumn" : 23
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "828aec6c0acceb27:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    }, {
+      "ruleId" : "local-sql-process-injection",
+      "ruleIndex" : 1,
+      "message" : {
+        "text" : "Found local CLI input passed into SQL query"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 26,
+            "startColumn" : 5,
+            "endColumn" : 27
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "133d1518f6972e48:1",
+        "primaryLocationStartColumnFingerprint" : "0"
+      }
+    } ],
+    "newlineSequences" : [ "\r\n", "\n", " ", " " ],
+    "columnKind" : "utf16CodeUnits",
+    "properties" : {
+      "semmle.formatSpecifier" : "sarif-latest"
+    }
+  } ]
+}
