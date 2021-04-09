@@ -15,7 +15,7 @@ class CommandLineSQLQueryConfiguration extends TaintTracking::Configuration {
   }
 
   override predicate isSink(DataFlow::Node sink) {
-    DataFlow::moduleMember("pg", "Client").getAnInstantiation().getAMethodCall("query").getArgument(0) = sink
+    DataFlow::moduleMember("pg", "Client").getAnInstantiation().getAMemberCall("query").getArgument(0) = sink
   }
 }
 

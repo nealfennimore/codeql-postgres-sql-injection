@@ -53,3 +53,33 @@ class PG {
 }
 
 new PG(client).query(cliQuery);
+
+//
+// ──────────────────────────────────────────────── V ──────────
+//   :::::: F I V E : :  :   :    :     :        :          :
+// ──────────────────────────────────────────────────────────
+//
+
+class PGStatic {
+
+    static query(q){
+        client.query(q);
+    }
+}
+
+PGStatic.query(cliQuery);
+
+//
+// ────────────────────────────────────────────── VI ──────────
+//   :::::: S I X : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────
+//
+
+function recurse(q, i){
+    if ( i === 3 ){
+        return client.query(q);
+    }
+    recurse(q, i + 1);
+}
+
+recurse(cliQuery, 0);
