@@ -83,3 +83,12 @@ function recurse(q, i){
 }
 
 recurse(cliQuery, 0);
+
+//
+// ────────────────────────────────────────────────── VII ──────────
+//   :::::: S E V E N : :  :   :    :     :        :          :
+// ────────────────────────────────────────────────────────────
+//
+
+const limitQuery = cliQuery + ' LIMIT 1';
+client.query(limitQuery);

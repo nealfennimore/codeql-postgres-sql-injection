@@ -614,7 +614,7 @@
         }
       } ],
       "partialFingerprints" : {
-        "primaryLocationLineHash" : "124c2eb097b411b1:1",
+        "primaryLocationLineHash" : "13ac2e7fced40128:1",
         "primaryLocationStartColumnFingerprint" : "20"
       },
       "codeFlows" : [ {
@@ -837,6 +837,161 @@
               },
               "message" : {
                 "text" : "q"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "relatedLocations" : [ {
+        "id" : 1,
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 3,
+            "startColumn" : 18,
+            "endColumn" : 33
+          }
+        },
+        "message" : {
+          "text" : "query"
+        }
+      } ]
+    }, {
+      "ruleId" : "global-sql-process-injection",
+      "ruleIndex" : 0,
+      "message" : {
+        "text" : "CLI input passed into SQL [query](1)."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "index.js",
+            "uriBaseId" : "%SRCROOT%",
+            "index" : 0
+          },
+          "region" : {
+            "startLine" : 94,
+            "startColumn" : 14,
+            "endColumn" : 24
+          }
+        }
+      } ],
+      "partialFingerprints" : {
+        "primaryLocationLineHash" : "7af21a9513709707:1",
+        "primaryLocationStartColumnFingerprint" : "13"
+      },
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 18,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "process.argv[2]"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 3,
+                  "startColumn" : 7,
+                  "endColumn" : 33
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 93,
+                  "startColumn" : 20,
+                  "endColumn" : 28
+                }
+              },
+              "message" : {
+                "text" : "cliQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 93,
+                  "startColumn" : 20,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "cliQuer ... IMIT 1'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 93,
+                  "startColumn" : 7,
+                  "endColumn" : 41
+                }
+              },
+              "message" : {
+                "text" : "limitQuery"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "index.js",
+                  "uriBaseId" : "%SRCROOT%",
+                  "index" : 0
+                },
+                "region" : {
+                  "startLine" : 94,
+                  "startColumn" : 14,
+                  "endColumn" : 24
+                }
+              },
+              "message" : {
+                "text" : "limitQuery"
               }
             }
           } ]
