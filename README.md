@@ -1,5 +1,7 @@
 # CodeQL Postgres SQL Injection
 
+- [Research Paper](PAPER.md)
+
 ## Setup
 
 Pull in CodeQL JavaScript container
